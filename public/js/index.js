@@ -26,10 +26,10 @@ function bookSearch(searchInfo) {
                 var bookISBN = document.querySelector('.bookISBN')
                 var bookAuthor = document.querySelector('.bookAuthor')
                 var bookRating = document.querySelector('.bookRating')
-                var bookNameTwo = data.volumeInfo.title
-                var bookISBNTwo = data.industryIdentifiers.identifier
-                var bookAuthorTwo = data.volumeInfo.authors[1]
-                var bookRatingTwo = data.averageRating
+                var bookNameTwo = data[i].volumeInfo.title
+                var bookISBNTwo = data[i].industryIdentifiers.identifier
+                var bookAuthorTwo = data[i].volumeInfo.authors[1]
+                var bookRatingTwo = data[i].averageRating
 
                 bookName.textContent = 'Book Title: ' + bookNameTwo
                 bookISBN.textContent = 'Book ISBN: ' + bookISBNTwo
@@ -46,21 +46,22 @@ searchButton.addEventListener('click', function () {
 })
 
 function addBook() {
-    addCollection.forEach(function () {
+    addCollection.forEach(async function () {
         //get title of specific book by traversing dom (want sibling)
         bookTitle = myButton.nextSibling()
         
-    //     // make fetch request to PUT route to update record
-    //     const response = await fetch(`/api/book-search/${bookTitle}`, {
-    //         method: 'PUT',
-    //         // body: JSON.stringify({ base_colo }),
-    //         headers: { 'Content-Type': 'application/json' }
-    //     });
-    //     if (response.ok) {
-    //         alert('Book Added!');
-    //         // //reload page
-    //         // window.location.reload();
-    //     }
+        // make fetch request to PUT route to update record
+        const response = await fetch(`/api/book-search/${bookTitle}`, {
+            method: 'PUT',
+            // body: JSON.stringify({ base_colo }),
+            headers: { 'Content-Type': 'application/json' }
+        });
+        if (response.ok) {
+            alert('Book Added!');
+            //         // //reload page
+            //         // window.location.reload();
+            //     }
+        }
     })
 }
 
