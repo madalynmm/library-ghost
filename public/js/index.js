@@ -6,7 +6,7 @@ var searchButton = document.querySelector("#searchBtn")
 searchButton.addEventListener('click', function () {
     var searchText = document.querySelector("#searchBox")
     var searchInfo = searchText.value
-    
+
     bookSearch(searchInfo)
 
     //redirect to book-search page
@@ -49,18 +49,18 @@ function addBook() {
     addCollection.forEach(function () {
         //get title of specific book by traversing dom (want sibling)
         bookTitle = myButton.nextSibling()
-
-        // make fetch request to PUT route to update record
-        const response = await fetch(`/api/book-search/${bookTitle}`, {
-            method: 'PUT',
-            // body: JSON.stringify({ base_colo }),
-            headers: { 'Content-Type': 'application/json' }
-        });
-        if (response.ok) {
-            alert('Book Added!');
-            // //reload page
-            // window.location.reload();
-        }
+        
+    //     // make fetch request to PUT route to update record
+    //     const response = await fetch(`/api/book-search/${bookTitle}`, {
+    //         method: 'PUT',
+    //         // body: JSON.stringify({ base_colo }),
+    //         headers: { 'Content-Type': 'application/json' }
+    //     });
+    //     if (response.ok) {
+    //         alert('Book Added!');
+    //         // //reload page
+    //         // window.location.reload();
+    //     }
     })
 }
 
