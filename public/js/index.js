@@ -64,5 +64,13 @@ function addBook() {
     })
 }
 
+// event listener to change page to collection page
+var collectionButton = document.querySelector("#collectionButton")
+collectionButton.addEventListener('click', function () {
+    //redirect to new page
+    document.location.replace('/collection');
+})
+
+
 //link html file(handlebars) to javascript, add unstyled button + text box,
 /* <script src="C:\Users\Smitte\bootcamp\project-2\library-ghost\public\js\index.js"></script> */
