@@ -6,11 +6,11 @@ var searchButton = document.querySelector("#searchBtn")
 searchButton.addEventListener('click', function () {
     var searchText = document.querySelector("#searchBox")
     var searchInfo = searchText.value
-    var bookResults = bookSearch(searchInfo)
+    
+    bookSearch(searchInfo)
 
-    //redirect to new page
+    //redirect to book-search page
     document.location.replace('/book-search');
-    console.log(bookResults)
 })
 
 // function to search for a book based on user input in search bar
@@ -71,6 +71,4 @@ collectionButton.addEventListener('click', function () {
     document.location.replace('/collection');
 })
 
-
 //link html file(handlebars) to javascript, add unstyled button + text box,
-/* <script src="C:\Users\Smitte\bootcamp\project-2\library-ghost\public\js\index.js"></script> */
