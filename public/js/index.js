@@ -1,8 +1,7 @@
 const apiKey = "AIzaSyBqzffvA4t9JXBJoUhqX0LD-DeCSfbBj0o"
-console.log('hello world')
 
 // function to read the search box and pass the values into the book API
-var searchButton = document.querySelector("#searchBtn")
+const searchButton = document.querySelector("#searchBtn")
 searchButton.addEventListener('click', function () {
     var searchText = document.querySelector("#searchBox")
     var searchInfo = searchText.value
@@ -10,7 +9,7 @@ searchButton.addEventListener('click', function () {
     bookSearch(searchInfo)
 
     //redirect to book-search page
-    document.location.replace('/book-search');
+    // document.location.replace('/book-search');
 })
 
 // function to search for a book based on user input in search bar

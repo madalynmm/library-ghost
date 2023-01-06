@@ -11,21 +11,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 </head>
 
 
 <body>
-
-
-
     <div class="container">
-
-
-
         <div id="DivMain">
-            <script id="Maindiv" type="text/x-handlebars-template">
-            <div class="text-center bg-light shadow-sm py-3">Library Page</div> 
+            <script id="Maindiv" type="text/x-handlebars-template"></script>
+            <div class="text-center bg-light shadow-sm py-3">Build your Library!</div> 
             <div class="row mt-4">
                 <div class="col-lg-6">
                     <div class="d-flex gap-3">
@@ -35,31 +28,19 @@
                     <button class=" btn btn-primary">
                         Create Account
                     </button>
-                    <button class=" btn btn-primary">
-                        About Us
-                    </button>
-                    <button class=" btn btn-primary">
-                        Api Info
-                    </button>
-
                 </div>
-                <button class="btn btn-primary mt-3" onclick="prompt('Please add a book', 'Book Name')">Add a book </button>
             </div>
             <div class="col-lg-6">
                 <div class="input-group rounded">
-                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                    <input type="search" id="searchBox" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
                         <span class="input-group-text border-0" id="search-addon">
-                          <i class="fas fa-search"></i>
+                          <i class="fas fa-search" id="searchBtn"></i>
                         </span>
                 </div>
                       <button class=" btn btn-primary mt-3" >View Collection</button>
             </div>
-            </script>
         </div>
-
     </div>
-
-
 </body>
 
 
@@ -79,5 +60,6 @@
 
     });
 </script>
+<script src="/js/index.js"></script>
 
 </html>
