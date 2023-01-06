@@ -25,16 +25,13 @@ function bookSearch(searchInfo) {
                 var bookName = document.querySelector('.bookName')
                 var bookISBN = document.querySelector('.bookISBN')
                 var bookAuthor = document.querySelector('.bookAuthor')
-                var bookRating = document.querySelector('.bookRating')
                 var bookNameTwo = data[i].volumeInfo.title
                 var bookISBNTwo = data[i].industryIdentifiers.identifier
                 var bookAuthorTwo = data[i].volumeInfo.authors[1]
-                var bookRatingTwo = data[i].averageRating
 
                 bookName.textContent = 'Book Title: ' + bookNameTwo
                 bookISBN.textContent = 'Book ISBN: ' + bookISBNTwo
                 bookAuthor.textContent = 'Book Author: ' + bookAuthorTwo
-                bookRating.textContent = 'Book Rating: ' + bookRatingTwo
             }
         })
 }
