@@ -8,31 +8,44 @@ Books.init(
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            // not sure if this needs to be primary key, or ISBN
             primaryKey: true,
             autoIncrement: true,
         },
-        book_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        genre: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         isbn: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
-            // not sure if this needs to be primary key, or ID
-            primaryKey: true,
         },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        author: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        // assignment_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false
+        // },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        },
+        // book_user_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        // },
         
     },
     {
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'dish',
+        modelName: 'books',
     }
 );
 
