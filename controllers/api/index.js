@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const collectionRoutes = require('./collection-routes');
+const collectionRoutes = require('./bookAssignment-routes');
 const userRoutes = require('./user-routes')
 const bookRoutes = require('/.book-routes')
 
