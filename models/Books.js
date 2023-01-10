@@ -11,35 +11,10 @@ Books.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        isbn: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         title: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        author: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        // assignment_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false
-        // },
-        user_id: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            references: {
-                model: 'user',
-                key: 'id'
-            }
-        },
-        // book_user_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        // },
-        
     },
     {
         sequelize,

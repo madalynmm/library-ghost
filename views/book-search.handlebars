@@ -1,24 +1,24 @@
-
-<body>
-    <div class="container">
-
-            <div class="col-lg-6">
-                <div class="input-group rounded">
-                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                </div>
-                      <button id='searchBtn' class=" btn btn-primary mt-3" >Search </button>
+<div class="container">
+    <h2>
+        <div class="col-lg-6">
+            <div class="input-group rounded">
+                <input type="search" id="searchBox" class="form-control rounded" placeholder="Search" aria-label="Search"
+                    aria-describedby="search-addon" />
             </div>
-            </script>
+            <button id='searchBtn' class=" btn btn-primary mt-3"> Search! </button>
         </div>
+    </h2>
 
-    </div>
-
-
-</body>
-
+    <p>Search Results</p>
+    <ul id="bookSearchResults">
+        <li id="bookName1"></li><button id="addToCollectionBtn">Add To Collection!</button>
+        <li id="bookName2"></li><button id="addToCollectionBtn">Add To Collection!</button>
+        <li id="bookName3"></li><button id="addToCollectionBtn">Add To Collection!</button>
+        <li id="bookName4"></li><button id="addToCollectionBtn">Add To Collection!</button>
+        <li id="bookName5"></li><button id="addToCollectionBtn">Add To Collection!</button>
+    </ul>
+</div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="/js/index.js"></script>
-</html>

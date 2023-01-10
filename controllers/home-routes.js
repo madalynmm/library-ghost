@@ -2,21 +2,22 @@ const router = require('express').Router();
 const { User, Books } = require('../models');
 
 
-// route to get search results
+// route to render htnl page with searchbar. YOu can use this to search for books. 
 router.get('/', async (req, res) => {
   res.render('book-search')
 })
 
-// route to get one dish
-router.get('/BookAssignment', async (req, res) => {
+// route to make API request to BOOKS model, to get all books that have been added to the collection
+// this data will then be available to render on the collections page
+router.get('/collection', async (req, res) => {
+  // makes API request before page is loaded
     try {
-        const bookData = await bookData.findByPk(req.params.id);
-        if (!bookData) {
-            res.status(404).json({ message: 'No dish with this id!' });
+        const collectionData = await Books.findAll();
+        if (!collectionData) {
+            res.status(404).json({ message: 'No books in the collection' });
             return;
         }
-        const dish = dishData.get({ plain: true });
-        res.render('dish', dish);
+        res.render('collection', collectionData);
     } catch (err) {
         res.status(500).json(err);
     };

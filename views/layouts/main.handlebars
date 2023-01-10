@@ -16,13 +16,7 @@
 
 
 <body>
-
-
-
     <div class="container">
-
-
-
         <div id="DivMain">
             <script id="Maindiv" type="text/x-handlebars-template">
             <div class="text-center bg-light shadow-sm py-3">Library Page</div> 
@@ -35,23 +29,25 @@
                     <button class=" btn btn-primary">
                         Create Account
                     </button>
-                    <button class=" btn btn-primary">
-                        About Us
-                    </button>
-                    <button class=" btn btn-primary">
-                        Api Info
-                    </button>
-
                 </div>
             </div>
 
             {{{ body }}}
 
         </div>
-
     </div>
-
-
 </body>
-
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+    var mydiv = [];
+    $(document).ready(function () {
+        // Using Handlebars
+        var target = $('#Maindiv').html(); // to get innerHTML of target script
+        var template = Handlebars.compile(target); // call handlebars compiler on target
+        $('#DivMain').append(template({ mydiv })); // append data  to template
+    });
+</script>
+<script src="/js/index.js"></script>
 </html>
