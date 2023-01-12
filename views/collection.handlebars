@@ -1,9 +1,11 @@
-<h2>All items currently in the collection</h2>
+<section class="container">
+    <h3 class="library-name">Your Book Collection</h3>
+    <section class="flex-row justify-center">
+        {{collection}}
+    </section>
+</section>
 
-{{#each book as |books|}}
-<div class='books col-md-5'>
-    <p>
-        {{book.title}}
-    </p>
-</div>
-{{/each}}
+<script src="/js/index.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

@@ -2,10 +2,10 @@ const apiKey = "AIzaSyBqzffvA4t9JXBJoUhqX0LD-DeCSfbBj0o"
 
 $(document).ready(function () {
     // function to read the search box and pass the values into the book API
-    document.getElementById("searchBtn").addEventListener('click', function () {
+    document.getElementById("searchBtn").addEventListener('click', function (event) {
+        event.preventDefault()
         var searchText = document.getElementById("searchBox")
         var searchInfo = searchText.value
-
         bookSearch(searchInfo)
     })
 
@@ -30,40 +30,45 @@ $(document).ready(function () {
                     var bookNameDataFour = data.items[3].volumeInfo.title
                     var bookNameDataFive = data.items[4].volumeInfo.title
 
-                    bookName.textContent = 'Book Title: ' + bookNameDataOne
-                    bookNameTwo.textContent = 'Book Title: ' + bookNameDataTwo
-                    bookNameThree.textContent = 'Book Title: ' + bookNameDataThree
-                    bookNameFour.textContent = 'Book Title: ' + bookNameDataFour
-                    bookNameFive.textContent = 'Book Title: ' + bookNameDataFive
+                    bookName.textContent = bookNameDataOne
+                    bookNameTwo.textContent = bookNameDataTwo
+                    bookNameThree.textContent = bookNameDataThree
+                    bookNameFour.textContent = bookNameDataFour
+                    bookNameFive.textContent = bookNameDataFive
                 }
             })
     }
 
+    var addToCollectionBtns = document.querySelectorAll('.addToCollectionBtn')
+    for (let i = 0; i < addToCollectionBtns.length; i++) {
+        addToCollectionBtns[i].addEventListener("click", () => {
+            console.log(addToCollectionBtns[i].nextSibling.textContent)
+            var bookTitle = addToCollectionBtns[i].nextSibling.textContent
+            addBook(bookTitle)
+        })
+    }
 
-    // querySelector for buttons to add to collection
-    var addCollection = document.getElementById("addToCollectionBtn").addEventListener('click', function () {
-        var bookTitle = document.querySelector('#bookName1').textContent
-        console.log(bookTitle)
-
-        addBook(bookTitle)
+    // button to redirect to collection page
+    document.getElementById('viewCollectionBtn').addEventListener('click', function (event) {
+        event.preventDefault()
+        window.location.replace('/collection')
+    })
+    // button to redirect to homepage
+    document.getElementById('homepageBtn').addEventListener('click', function (event) {
+        event.preventDefault()
+        // window.location.replace('/')
+        console.log('hello')
     })
 
-    // var bookTitle = document.querySelectorAll('#addToCollectionBtn').previousElementSibling
-
-    async function addBook(bookTitle) {
-        // addCollection.forEach(async function () {
+    async function addBook(title) {
         // make fetch request to PUT route to update record
-            const response = await fetch(`/api/book-search/${bookTitle}`, {
-                method: 'PUT',
-                // body: JSON.stringify({ base_colo }),
+            const response = await fetch("/api/book/books", {
+                method: 'POST',
+                body: JSON.stringify({ title }),
                 headers: { 'Content-Type': 'application/json' }
             });
             if (response.ok) {
                 alert('Book Added!');
-                //         // //reload page
-                //         // window.location.reload();
-                //     }
             }
-        // });
     }
 })
