@@ -1,14 +1,16 @@
 const router = require('express').Router();
 const { Books } = require('../../models/');
 
+// view all books in database
+router.get('/viewAllBooks', async (req, res) => {
+  const bookData = await Books.findAll();
+})
 
 // create new book
 router.post('/books', async (req, res) => {
     try {
         const newBook = await Books.create({
-            ...req.body,
-      user_id: req.session.user_id,
-            
+          title: req.body.title,
         });
         // if book successfully added, response returned as json
         res.status(200).json(newBook)
