@@ -1,0 +1,33 @@
+@import url(https://fonts.googleapis.com/css?family=Bodoni+Moda:regular,500,600,700,800,900,italic,500italic,600italic,700italic,800italic,900italic);
+
+body {
+  background-image: url("../images/fanned-books.jpeg");
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+
+ nav h1 {
+  font-family: Bodoni Moda, serif;
+  padding: 10px;
+  padding-left: 20px;
+}
+
+.navbar-nav {
+  width: 80vw;
+  justify-content: space-around;
+}
+
+.navbar-toggler-icon {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/3038/3038089.png");
+}
+
+.header-title {
+  font-family: Bodoni Moda, serif;
+  font-weight: bold;
+}
+
+.book-list {
+  list-style: none;
+  padding-bottom: 20px;
+}
