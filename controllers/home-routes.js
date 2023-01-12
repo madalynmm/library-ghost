@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Books } = require('../models');
 
 
-// route to render htnl page with searchbar. YOu can use this to search for books. 
+// route to render html page with searchbar. You can use this to search for books. 
 router.get('/', async (req, res) => {
   res.render('book-search')
 })

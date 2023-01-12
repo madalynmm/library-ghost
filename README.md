@@ -19,6 +19,8 @@
   * Anyone can access and use this application. The application is live at: 
 
   * Github repository for source files: https://github.com/madalynmm/library-ghost
+
+  * Link to deployed application: 
   
   ## Contributing
   
@@ -48,3 +50,5 @@
   * If you have any questions regarding the application, please reach out to any of the application creators: **Alex Biggs**, **Madalyn Marino**, **Chris Mizelle**, **Michael Smitte**, or **Hunter White**.
   
   ## Screenshot of the Application
+
+  ![Digital Library Website](./public/images/Screenshot-of-site.png)

@@ -12,3 +12,22 @@ body {
   padding: 10px;
   padding-left: 20px;
 }
+
+.navbar-nav {
+  width: 80vw;
+  justify-content: space-around;
+}
+
+.navbar-toggler-icon {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/3038/3038089.png");
+}
+
+.header-title {
+  font-family: Bodoni Moda, serif;
+  font-weight: bold;
+}
+
+.book-list {
+  list-style: none;
+  padding-bottom: 20px;
+}
