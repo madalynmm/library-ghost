@@ -20,7 +20,7 @@
 
   * Github repository for source files: https://github.com/madalynmm/library-ghost
 
-  * Link to deployed application: 
+  * Link to deployed application: https://secret-chamber-67759.herokuapp.com/
   
   ## Contributing
   
